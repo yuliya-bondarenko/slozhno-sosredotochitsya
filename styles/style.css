@@ -1,5 +1,141 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  min-inline-size: 375px;
+  max-block-size: 6770px;
+  font-family: 'IBM Plex mono', sans-serif;
+  /*background-color: var(--background-color);*/
+}
+
+.header {
+  min-inline-size: 375px;
+  min-block-size: 668px;
+  position: relative;
+  background-image: url(../images/cover-image-dark.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  padding: 10px;
+}
+
+.decorative_element {
+  position: absolute;
+  inset-block-start: 10px;
+  inset-inline-end: 38px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+  color: var(--accent-color);
+}
+
+.decorative_element::after {
+  content: "";
+  position: absolute;
+  background-color: var(--accent-color);
+  display: block;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  top:9px;
+  right: -15px;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+  top: 10px;
+  right: 10px;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
+  bottom: 10px;
+  left: 10px;
+}
+
+.header__theme-menu {
+  grid-row-start: 1;
+  align-self: center;
+  justify-self: self-end;
+}
+
+.header__theme-menu-list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  text-transform: lowercase;
+  background-color: transparent;
+  color: var(--accent-color);
+  font-size: 18px;
+  line-height: 18px;
+  border: none;
+  padding: 1.5px 13px;
+  letter-spacing: 3px;
+}
+
+@media (hover:hover) {
+  .header__theme-menu-button:hover {
+    outline: 1px solid var(--accent-color);
+    cursor: pointer;
+  }
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--accent-color);
+  padding: 0.5px 13px;
+}
+
+.header__theme-menu-button_active:default {
+  outline: 1px solid var(--accent-color);
+  border: none;
+  text-decoration: none;
+  cursor: none;
+}
+
+.title {
+  grid-row-start: 2;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 95.7px;
+  text-align: left;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 4px 4px 0  var(--accent-color);
+  color: #DB00FF;
+  margin: 0 auto;
+}
+
+.title-decor {
+  grid-row-start: 3;
+  color: var(--background-color);
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  text-align: left;
+  background-color: var(--accent-color);
+  align-self: center;
+  justify-content: end;
 }
