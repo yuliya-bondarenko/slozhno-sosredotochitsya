@@ -3,8 +3,10 @@
 .page {
   inline-size: 375px;
   max-block-size: 6770px;
+  margin: 0;
   font-family: 'IBM Plex mono', sans-serif;
   background-image: var(--background-image);
+  /*opacity: 50%;*/
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,8 +14,8 @@
 }
 
 .header {
-  min-inline-size: 375px;
   min-block-size: 668px;
+  block-size: 100vh;
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
@@ -41,8 +43,8 @@
   block-size: 9px;
   border-radius: 50%;
   box-shadow: 0px 0px 4px 2px var(--accent-color);
-  top:9px;
-  right: -15px;
+  top: 8px;
+  right: -19px;
 }
 
 .header::before {
@@ -76,7 +78,7 @@
 .header__theme-menu-list {
   list-style: none;
   display: grid;
-  gap: 10px;
+  gap: 16px;
 }
 
 .header__theme-menu-button {
@@ -87,7 +89,6 @@
   line-height: 18px;
   border: none;
   padding: 1.5px 13px;
-  letter-spacing: 3px;
 }
 
 @media (hover:hover) {
@@ -123,29 +124,47 @@
   text-align: left;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   text-shadow: 4px 4px 0  var(--accent-color);
-  color: #DB00FF;
+  color: var(--color-title);
   margin: 0 auto;
 }
 
 .title-decor {
   grid-row-start: 3;
-  color: var(--background-color);
-  font-family: inherit;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 23.4px;
-  text-align: left;
-  background-color: var(--accent-color);
   align-self: center;
   justify-content: end;
 }
 
+.text-heading {
+  color: var(--background-color);
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  text-align: left;
+  background-color: var(--accent-color);
+}
+
+.text-heading-bold {
+  font-weight: 700;
+}
+
+.text-heading_min-margin {
+  margin-bottom: 10px;
+}
+
+.text-heading_max-margin {
+  margin-bottom: 20px;
+}
+
+.text-heading_flexible-margin {
+  /*меняющийся марджин в зависимости от размеров экрана*/
+}
+
 .content {
-  padding: 40px 0;
-  padding-inline-start: 10px;
+  padding: 40px 10px;
   background-color: var(--background-color);
   display: grid;
-  gap: 50px;
+  gap: 30px;
 }
 
 .title-section {
@@ -164,10 +183,7 @@
   line-height: 23.4px;
   text-align: left;
   color: var(--color);
-}
-
-.subtitle-decor {
-  font-weight: 400;
+  word-spacing: 1px;
 }
 
 .text-content-link {
@@ -191,6 +207,8 @@ a:focus-visible {
 
 /* блок с картинками*/
 .gallery_list {
+  margin: 10px 0 0 0;
+  padding: 0;
   list-style: none;
   display: grid;
   grid-template-columns: repeat (3, 1fr);
@@ -222,7 +240,7 @@ a:focus-visible {
   font-weight: 700;
   line-height: 95.7px;
   text-align: center;
-  color: #DB00FF;
+  color: var(--color-title);
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
