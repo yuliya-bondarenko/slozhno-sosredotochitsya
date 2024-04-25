@@ -254,7 +254,7 @@ a:focus-visible {
   left: 10px;
 }
 
-@media(375px<width<=668px) {
+@media(375px<width<=768px) {
   .page {
     inline-size: 768px;
     max-block-size: 5850px;
@@ -378,6 +378,7 @@ a:focus-visible {
     margin-left: 513px;
     align-self: center;
     justify-content: end;
+    margin-block-start: 15px;
   }
 
   .header::before {
@@ -399,10 +400,6 @@ a:focus-visible {
     padding-inline-start: 20px;
     display: flex;
     gap: 12px;
-  }
-
-  .title-decor {
-    margin-block-start: 15px;
   }
   
   .content {

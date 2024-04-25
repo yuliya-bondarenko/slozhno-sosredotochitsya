@@ -1,11 +1,11 @@
-.page .theme-light {
+.page.theme-light {
   --background-color: #fff1f7;
   --color: #353430;
   --text-on-a-colored-background: #353430;
   --accent-color: #FF8DCB;
   --background-image: url(../images/cover-image-light.png);
-  --color-title: #FFC2E6; 
-  --color-title-shadow: #FF8DCB;  
+  --color-title: #FFC2E6;
+  --color-title-shadow: #FF8DCB;
 }
 
 @media (prefers-color-scheme: light) {
@@ -14,12 +14,16 @@
     --color: #353430;
     --accent-color: #FF8DCB;
     --background-image: url(../images/cover-image-light.png);
-    --color-title: #FFC2E6; 
-    --color-title-shadow: #FF8DCB;     
+    --color-title: #FFC2E6;
+    --color-title-shadow: #FF8DCB;
   }
 }
 
 @media (prefers-color-scheme: light) {
+  .page {
+    background-image: var(--background-image);
+  }
+
   .header::before {
     border-top: 1px solid var(--color);
     border-right: 1px solid var(--color);
@@ -59,6 +63,8 @@
     border-left: 1px solid var(--color);
     border-bottom: 1px solid var(--color);
   }
+
+
 
   @media (768px<width<=1024px) {
     .title {
