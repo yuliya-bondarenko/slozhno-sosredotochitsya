@@ -1,12 +1,8 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   inline-size: 375px;
   max-block-size: 6770px;
-  margin: 0;
   font-family: 'IBM Plex mono', sans-serif;
   background-image: var(--background-image);
-  /*opacity: 50%;*/
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -121,7 +117,7 @@
   line-height: 95.7px;
   text-align: left;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  text-shadow: 4px 4px 0  var(--accent-color);
+  text-shadow: 4px 4px 0  var(--color-title-shadow);
   color: var(--color-title);
   margin: 0 auto;
 }
@@ -133,7 +129,7 @@
 }
 
 .text-heading {
-  color: var(--background-color);
+  color: var(--text-on-a-colored-background);
   font-family: inherit;
   font-size: 18px;
   font-weight: 400;
@@ -152,10 +148,6 @@
 
 .text-heading_max-margin {
   margin-bottom: 20px;
-}
-
-.text-heading_flexible-margin {
-  /*меняющийся марджин в зависимости от размеров экрана*/
 }
 
 .content {
@@ -181,7 +173,6 @@
   line-height: 23.4px;
   text-align: left;
   color: var(--color);
-  word-spacing: 1px;
 }
 
 .text-content-link {
@@ -203,7 +194,6 @@ a:focus-visible {
   outline: 1px solid var(--color);
 }
 
-/* блок с картинками*/
 .gallery_list {
   margin: 10px 0 0 0;
   padding: 0;
@@ -239,7 +229,7 @@ a:focus-visible {
   line-height: 95.7px;
   text-align: center;
   color: var(--color-title);
-  text-shadow: 2px 2px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--color-title-shadow);
 }
 
 .footer::before {
@@ -264,7 +254,7 @@ a:focus-visible {
   left: 10px;
 }
 
-@media(375px<width<=768px) {
+@media(375px<width<=668px) {
   .page {
     inline-size: 768px;
     max-block-size: 5850px;
@@ -272,17 +262,17 @@ a:focus-visible {
 
   .header {
     min-block-size: 1024px;
-    padding: 0 20px 0 0;
+    padding: 20px 20px 20px 0;
   }
   
   .decorative_element {
     inset-block-start: 20px;
     inset-inline-end: 48px;
   }
-  
+
   .title {
     margin: 0;
-    clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem)
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
   .title-decor {
@@ -317,8 +307,10 @@ a:focus-visible {
   }
 
   .gallery_list {
+    padding-block-start: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 
   .gallery_list-item {
@@ -347,7 +339,127 @@ a:focus-visible {
   }
 
   .footer-text {
-    font-size: (7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);;
+  }
+
+  .footer::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .footer::after {
+    bottom: 20px;
+    left: 20px;
+  }
+}
+
+@media (768px<width<=1024px) {
+  .page {
+    inline-size: 1024px;
+    max-block-size: 5008px;
+  }
+
+  .header {
+    min-block-size: 768px;
+    padding: 20px 20px 20px 0;
+  }  
+
+  .decorative_element {
+    inset-block-start: 20px;
+    inset-inline-end: 48px;
+  }
+
+  .title {
+    margin: 0;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .title-decor {
+    margin-left: 513px;
+    align-self: center;
+    justify-content: end;
+  }
+
+  .header::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .header::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .header__theme-menu {
+    align-self: self-start;
+    justify-self: center;
+  }
+  
+  .header__theme-menu-list {
+    padding-inline-start: 20px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .title-decor {
+    margin-block-start: 15px;
+  }
+  
+  .content {
+    padding: 60px 20px;
+    gap: 60px;
+  }
+
+  .content-section {
+    display: grid;
+    grid-template-columns: 315px 1fr;
+    gap: 20px;
+  }
+
+  .content-section_causes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .title-section_padding {
+    padding-right: 669px;
+  }
+
+  .gallery_list {
+    padding-block-start: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .gallery_list-item {
+    inline-size: 100%;
+    block-size: 100%;
+  }
+
+  .sunset {
+    grid-column: span 2;
+  }
+
+  .ice-cream {
+    grid-row: span 2;
+  }
+
+  .tape {
+    grid-row: 2 span;
+  }
+
+  .street {
+    grid-column: 2 span;
+  }
+
+  .footer {
+    min-block-size: 768px;
+  }
+
+  .footer-text {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);;
   }
 
   .footer::before {
