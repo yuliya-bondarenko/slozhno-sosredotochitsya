@@ -12,6 +12,7 @@
   :root {
     --background-color: #fff1f7;
     --color: #353430;
+    --text-on-a-colored-background: #353430;
     --accent-color: #FF8DCB;
     --background-image: url(../images/cover-image-light.png);
     --color-title: #FFC2E6;
