@@ -74,7 +74,7 @@
 .header__theme-menu-list {
   list-style: none;
   display: grid;
-  gap: 16px;
+  gap: 15px;
 }
 
 .header__theme-menu-button {
@@ -85,9 +85,6 @@
   line-height: 18px;
   border: none;
   padding: 1.5px 13px;
-}
-
-.header__theme-menu-button {
   border-block-end: 1px solid transparent;
 }
 
@@ -260,7 +257,7 @@ a:focus-visible {
   left: 10px;
 }
 
-@media(768px<=width<1024px) { 
+@media(768px<=width<1024px) {
   .page {
     inline-size: 768px;
   }

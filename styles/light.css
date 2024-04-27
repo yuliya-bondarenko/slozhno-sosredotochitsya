@@ -26,11 +26,12 @@
     --color-title-shadow: #FF8DCB;
     --color-title-section: #353430;
   }
-  
+
   @media (768px<width<=1024px) or (width>1024px) {
     .title,
     .footer-text {
     --color-title-shadow: #FF0070;
+    }
   }
 }
 
