@@ -101,7 +101,6 @@
 
 .header__theme-menu-button:focus-visible {
   border-block-end: 1px solid var(--color-theme-menu-button);
-  padding: 0.5px 13px;
 }
 
 .header__theme-menu-button_active {
@@ -468,5 +467,13 @@ a:focus-visible {
   .footer::after {
     bottom: 20px;
     left: 20px;
+  }
+
+  .theme_light .title {
+    text-shadow: 4px 4px 0 #FF0070;
+  }
+
+  .theme_light .footer-text {
+    text-shadow: 2px 2px 0 #FF0070;
   }
 }

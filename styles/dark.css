@@ -17,3 +17,7 @@
     display: block;
   }
 }
+
+.theme_dark .decorative-element {
+  display: block;
+}
