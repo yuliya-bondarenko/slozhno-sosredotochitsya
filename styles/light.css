@@ -1,79 +1,41 @@
-.page.theme-light {
+.page.theme_light {
   --background-color: #fff1f7;
   --color: #353430;
+  --decorative-color: #353430;
+  --color-theme-menu-button: #353430;
   --text-on-a-colored-background: #353430;
+  --outline-color-hover: rgba(50, 49, 45, 0.4);
   --accent-color: #FF8DCB;
   --background-image: url(../images/cover-image-light.png);
   --color-title: #FFC2E6;
   --color-title-shadow: #FF8DCB;
+  --color-title-section: #353430;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --background-color: #fff1f7;
     --color: #353430;
+    --decorative-color: #353430;
+    --color-theme-menu-button: #353430;
     --text-on-a-colored-background: #353430;
+    --outline-color-hover: rgba(50, 49, 45, 0.4);
     --accent-color: #FF8DCB;
     --background-image: url(../images/cover-image-light.png);
     --color-title: #FFC2E6;
     --color-title-shadow: #FF8DCB;
+    --color-title-section: #353430;
+  }
+  
+  @media (768px<width<=1024px) or (width>1024px) {
+    .title,
+    .footer-text {
+    --color-title-shadow: #FF0070;
   }
 }
 
 @media (prefers-color-scheme: light) {
-  .page {
-    background-image: var(--background-image);
-  }
-
-  .header::before {
-    border-top: 1px solid var(--color);
-    border-right: 1px solid var(--color);
-  }
-
-  .header::after {
-    border-left: 1px solid var(--color);
-    border-bottom: 1px solid var(--color);
-  }
-
-  .decorative_element {
+  .decorative-element {
     display: none;
-  }
-
-  .header__theme-menu-button {
-    color: var(--color);
-  }
-
-  .header__theme-menu-button:hover {
-    outline: 1px solid var(--color);
-  }
-
-  .header__theme-menu-button:focus-visible {
-    border-block-end: 1px solid var(--color);
-  }
-
-  .title-section {
-    color: var(--color);
-  }
-
-  .footer::before {
-    border-top: 1px solid var(--color);
-    border-right: 1px solid var(--color);
-  }
-
-  .footer::after {
-    border-left: 1px solid var(--color);
-    border-bottom: 1px solid var(--color);
-  }
-
-
-
-  @media (768px<width<=1024px) {
-    .title {
-      text-shadow: 4px 4px 0  #FF0070;
-    }
-
-    .footer-text {
-      text-shadow: 2px 2px 0  #FF0070;
-    }
   }
 }

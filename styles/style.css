@@ -1,12 +1,12 @@
 .page {
   inline-size: 375px;
-  max-block-size: 6770px;
   font-family: 'IBM Plex mono', sans-serif;
   background-image: var(--background-image);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-color: var(--background-color);
 }
 
 .header {
@@ -18,7 +18,7 @@
   padding: 10px;
 }
 
-.decorative_element {
+.decorative-element {
   position: absolute;
   inset-block-start: 10px;
   inset-inline-end: 38px;
@@ -30,7 +30,7 @@
   color: var(--accent-color);
 }
 
-.decorative_element::after {
+.decorative-element::after {
   content: "";
   position: absolute;
   background-color: var(--accent-color);
@@ -48,8 +48,8 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--decorative-color);
+  border-right: 1px solid var(--decorative-color);
   top: 10px;
   right: 10px;
 }
@@ -59,8 +59,8 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--decorative-color);
+  border-left: 1px solid var(--decorative-color);
   bottom: 10px;
   left: 10px;
 }
@@ -80,15 +80,19 @@
 .header__theme-menu-button {
   text-transform: lowercase;
   background-color: transparent;
-  color: var(--accent-color);
+  color: var(--color-theme-menu-button);
   font-size: 18px;
   line-height: 18px;
   border: none;
   padding: 1.5px 13px;
 }
 
+.header__theme-menu-button {
+  border-block-end: 1px solid transparent;
+}
+
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--outline-color-hover);
   cursor: pointer;
 }
 
@@ -99,14 +103,18 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--color-theme-menu-button);
   padding: 0.5px 13px;
 }
 
-.header__theme-menu-button_active:default {
-  outline: 1px solid var(--accent-color);
+.header__theme-menu-button_active {
+  outline: 1px solid var(--color-theme-menu-button);
   border: none;
   text-decoration: none;
+  padding: 1.5px 13px;
+}
+
+.header__theme-menu-button_active:disabled {
   pointer-events: none;
 }
 
@@ -132,27 +140,26 @@
   color: var(--text-on-a-colored-background);
   font-family: inherit;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 23.4px;
   text-align: left;
   background-color: var(--accent-color);
 }
 
-.text-heading-bold {
-  font-weight: 700;
+.text-heading-normal {
+  font-weight: 400;
 }
 
-.text-heading_min-margin {
+.text-heading-min-margin {
   margin-bottom: 10px;
 }
 
-.text-heading_max-margin {
+.text-heading-max-margin {
   margin-bottom: 20px;
 }
 
 .content {
   padding: 40px 10px;
-  background-color: var(--background-color);
   display: grid;
   gap: 30px;
 }
@@ -163,7 +170,7 @@
   font-weight: 700;
   line-height: 23.4px;
   text-align: left;
-  color: var(--accent-color);
+  color: var(--color-title-section);
 }
 
 .text-content {
@@ -177,7 +184,7 @@
 
 .text-content-link {
   color: var(--color);
-  text-shadow: 2px 2px 0  var(--accent-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
   text-decoration: none;
 }
 
@@ -194,7 +201,7 @@ a:focus-visible {
   outline: 1px solid var(--color);
 }
 
-.gallery_list {
+.gallery-list {
   margin: 10px 0 0 0;
   padding: 0;
   list-style: none;
@@ -204,7 +211,7 @@ a:focus-visible {
   gap: 10px;
 }
 
-.gallery_image {
+.gallery-image {
   display: block;
   inline-size: 100%;
   block-size: 100%;
@@ -215,7 +222,6 @@ a:focus-visible {
   position: relative;
   min-block-size: 667px;
   block-size: 100vh;
-  background-color: var(--background-color);
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
 }
@@ -237,8 +243,8 @@ a:focus-visible {
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--decorative-color);
+  border-right: 1px solid var(--decorative-color);
   top: 10px;
   right: 10px;
 }
@@ -248,16 +254,15 @@ a:focus-visible {
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--decorative-color);
+  border-left: 1px solid var(--decorative-color);
   bottom: 10px;
   left: 10px;
 }
 
-@media(375px<width<=768px) {
+@media(768px<=width<1024px) { 
   .page {
     inline-size: 768px;
-    max-block-size: 5850px;
   }
 
   .header {
@@ -265,7 +270,7 @@ a:focus-visible {
     padding: 20px 20px 20px 0;
   }
   
-  .decorative_element {
+  .decorative-element {
     inset-block-start: 20px;
     inset-inline-end: 48px;
   }
@@ -302,18 +307,18 @@ a:focus-visible {
     gap: 20px;
   }
   
-  .title-section_padding {
+  .title-section-padding {
     padding-right: 492px;
   }
 
-  .gallery_list {
+  .gallery-list {
     padding-block-start: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
-  .gallery_list-item {
+  .gallery-list-item {
     inline-size: 100%;
     block-size: 100%;
   }
@@ -353,18 +358,17 @@ a:focus-visible {
   }
 }
 
-@media (768px<width<=1024px) {
+@media (width>=1024px) {
   .page {
     inline-size: 1024px;
-    max-block-size: 5008px;
   }
-
+  
   .header {
     min-block-size: 768px;
     padding: 20px 20px 20px 0;
   }  
 
-  .decorative_element {
+  .decorative-element {
     inset-block-start: 20px;
     inset-inline-end: 48px;
   }
@@ -413,24 +417,24 @@ a:focus-visible {
     gap: 20px;
   }
 
-  .content-section_causes {
+  .content-section-causes {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
   
-  .title-section_padding {
+  .title-section-padding {
     padding-right: 669px;
   }
 
-  .gallery_list {
+  .gallery-list {
     padding-block-start: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
-  .gallery_list-item {
+  .gallery-list-item {
     inline-size: 100%;
     block-size: 100%;
   }
